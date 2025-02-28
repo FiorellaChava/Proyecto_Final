@@ -1,18 +1,13 @@
-# Proyecto final Introducciona Python
-## Autor :Fiorella chavarria Vargas
-### Fecha: 2025 / 02 / 27
-
 import os
+from modulo1 import ingresar_ventas
 
 
 def limpiar_terminal():
     """Limpia la pantalla de la terminal."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
 def pausar():
     input("\nPresione Enter para continuar...")
-
 
 
 # Menú principal
@@ -26,14 +21,15 @@ def menu():
         print("4. Salir")
         opcion = input("Seleccione una opción: ")
 
-
         if opcion == "1":
             limpiar_terminal()
             print("\n--- Ingreso de Ventas ---")
-            #ingresar_datos
+            ingresar_ventas(ventas)
+            print(ventas)
             pausar()
         elif opcion == "2":
             limpiar_terminal()
+            
             print("\n--- Guardar Ventas ---")
             #guardar_csv
             pausar()
@@ -49,11 +45,10 @@ def menu():
             print("Opción no válida. Intente de nuevamente, pongase las pilas!")
             pausar()
 
-
 # Ejecución del sistema solo si el archivo es el main
 if __name__ == "__main__":
     limpiar_terminal()
     print("Bienvenido al sistema de gestión de ventas")
     pausar()
     menu()
-
+    
